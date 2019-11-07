@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISonC3", "ISonC3\ISonC3.csproj", "{5045B9A5-EA80-49A7-B19B-1B05EBD1AD9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5045B9A5-EA80-49A7-B19B-1B05EBD1AD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5045B9A5-EA80-49A7-B19B-1B05EBD1AD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5045B9A5-EA80-49A7-B19B-1B05EBD1AD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5045B9A5-EA80-49A7-B19B-1B05EBD1AD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D45522F-A09C-4FDA-AD44-7C6631A982D6}
+	EndGlobalSection
+EndGlobal
