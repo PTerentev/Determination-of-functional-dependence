@@ -15,3 +15,21 @@ C:\Users\Zevonchek\Desktop\ISonC3\ISonC3\bin\Debug\OxyPlot.dll
 C:\Users\Zevonchek\Desktop\ISonC3\ISonC3\bin\Debug\OxyPlot.WindowsForms.dll
 C:\Users\Zevonchek\Desktop\ISonC3\ISonC3\bin\Debug\OxyPlot.xml
 C:\Users\Zevonchek\Desktop\ISonC3\ISonC3\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.csprojAssemblyReference.cache
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.Form1.resources
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.Properties.Resources.resources
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.csproj.GenerateResource.cache
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.csproj.CoreCompileInputs.cache
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\ISonC3.exe.config
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\ISonC3.exe
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\ISonC3.pdb
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\Ganasoft.DTO1199928.dll
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\Microsoft.Solver.Foundation.dll
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\OxyPlot.dll
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\Microsoft.Solver.Foundation.xml
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\OxyPlot.xml
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.csproj.CopyComplete
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.exe
+C:\Users\Pavel Terentev\Documents\GitHub\Determination-of-functional-dependence\ISonC3\obj\Debug\ISonC3.pdb

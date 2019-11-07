@@ -169,34 +169,34 @@ namespace ISonC3
         private void Button1_Click(object sender, EventArgs e)
         {
             coords.Clear();
-            try
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    coords.Add(new XY(Convert.ToDouble(GridView1.Rows[0].Cells[j].Value),
-                        Convert.ToDouble(GridView1.Rows[1].Cells[j].Value)));
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Данные введены неправильно!");
-                return;
-            }
-            //for tests
-            //coords = new List<XY>()
+            //try
             //{
-            //    new XY(-0.5, 0.2),
-            //    new XY(-0.3,0.17),
-            //    new XY(-0.1,0.16),
-            //    new XY(0.1, 0.25),
-            //    new XY(0.9, 0.58),
-            //    new XY(0.3,0.34),
-            //    new XY(0.5,0.42),
-            //    new XY(0.7,0.48),
+            //    for (int j = 0; j < 10; j++)
+            //    {
+            //        coords.Add(new XY(Convert.ToDouble(GridView1.Rows[0].Cells[j].Value),
+            //            Convert.ToDouble(GridView1.Rows[1].Cells[j].Value)));
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Данные введены неправильно!");
+            //    return;
+            //}
+            //for tests
+            coords = new List<XY>()
+            {
+                new XY(-0.5, 0.2),
+                new XY(-0.3,0.17),
+                new XY(-0.1,0.16),
+                new XY(0.1, 0.25),
+                new XY(0.9, 0.58),
+                new XY(0.3,0.34),
+                new XY(0.5,0.42),
+                new XY(0.7,0.48),
 
-            //    new XY(1.1,0.99),
-            //    new XY(1.3,3)
-            //};
+                new XY(1.1,0.99),
+                new XY(1.3,3)
+            };
             coords = (from xy in coords
                       orderby xy.X
                       select xy).ToList();
@@ -214,32 +214,25 @@ namespace ISonC3
             func[5].Value = Math.Abs(YbyXprop.Item3 - yprop.Item1);  //гиперболическая
             func[6].Value = Math.Abs(YbyXprop.Item3 - yprop.Item2);
             TypeOfFunction foundFunc = (from f in func orderby f.Value select f).First();
-            SolverContext context = SolverContext.GetContext();
-            context.ClearModel();
-            Microsoft.SolverFoundation.Services.Model model = context.CreateModel();
-            var decisionA = new Decision(Domain.Real, "A");
-            var decisionB = new Decision(Domain.Real, "B");
-            model.AddDecision(decisionA);
-            model.AddDecision(decisionB);
-            model.AddGoal("Goal", GoalKind.Minimize, foundFunc.GetFuncString(coords));
-            context.Solve();
-            double a = decisionA.GetDouble();
-            double b = decisionB.GetDouble();
+            (double, double) abItems = solveFunction(foundFunc);
+            double a = abItems.Item1;
+            double b = abItems.Item2;
             XY[] arraycoords = (from xy in coords orderby xy.X select xy).ToArray();
-            LineSeries lS = new LineSeries();
+            
             try
             {
+                LineSeries lS = new LineSeries();
+                var myModel = new PlotModel { Title = "График" };
                 FunctionSeries functionSeries = new FunctionSeries((x) => foundFunc.Func(a, b, x), coords.FirstOrDefault().X, coords.LastOrDefault().X, 0.0001, "function");
                 for (int j = 0; j < 10; j++)
                 {
                     GridView2.Rows[0].Cells[j].Value = arraycoords[j].X;
                     GridView2.Rows[1].Cells[j].Value = Math.Round(foundFunc.Func(a, b, arraycoords[j].X), 3);
-                    lS.Points.Add(new DataPoint(arraycoords[j].X, arraycoords[j].Y));
+                    lS.Points.Add(new DataPoint(arraycoords[j].X, arraycoords[j].Y));   
                 }
                 textBox1.Text = foundFunc.Name;
                 textBox2.Text = Math.Round(a, 3).ToString();
                 textBox3.Text = Math.Round(b, 3).ToString();
-                var myModel = new PlotModel { Title = "График" };
                 lS.Title = "Исходные данные";
                 myModel.Series.Add(functionSeries);
                 myModel.Series.Add(lS);
@@ -251,6 +244,19 @@ namespace ISonC3
             }
             
 
+        }
+        (double, double) solveFunction(TypeOfFunction func)
+        {
+            SolverContext context = SolverContext.GetContext();
+            context.ClearModel();
+            Microsoft.SolverFoundation.Services.Model model = context.CreateModel();
+            var decisionA = new Decision(Domain.Real, "A");
+            var decisionB = new Decision(Domain.Real, "B");
+            model.AddDecision(decisionA);
+            model.AddDecision(decisionB);
+            model.AddGoal("Goal", GoalKind.Minimize, func.GetFuncString(coords));
+            context.Solve();
+            return (decisionA.GetDouble(), decisionB.GetDouble());
         }
         (double,double,double) calcProperties(double c0, double c1)
         {
