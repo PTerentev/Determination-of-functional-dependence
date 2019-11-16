@@ -51,7 +51,12 @@ namespace ISonC3
                     {   StringBuilder exp = new StringBuilder();
                         foreach(var coord in coords)
                         {
-                            exp.Append($"({coord.Y} - ( A * B^{coord.X} ))^2");
+                            if(coord.X == 0)
+                            {
+                                exp.Append($"({coord.Y} - ( A *(B^(0.0001))))^2");
+                            }
+                            else
+                            exp.Append($"({coord.Y} - ( A *(B^({coord.X}))))^2");
                             if (!coord.Equals(coords.Last()))
                             {
                                 exp.Append(" + ");
@@ -185,17 +190,17 @@ namespace ISonC3
             //for tests
             coords = new List<XY>()
             {
-                new XY(-0.5, 0.2),
-                new XY(-0.3,0.17),
-                new XY(-0.1,0.16),
-                new XY(0.1, 0.25),
-                new XY(0.9, 0.58),
-                new XY(0.3,0.34),
-                new XY(0.5,0.42),
-                new XY(0.7,0.48),
+                new XY(-4, 0.04),
+                new XY(-3,0.06),
+                new XY(-2,0.23),
+                new XY(-1, 0.3),
+                new XY(0, 0.57),
+                new XY(1,0.99),
+                new XY(2,2.34),
+                new XY(3,3.79),
 
-                new XY(1.1,0.99),
-                new XY(1.3,3)
+                new XY(4,8),
+                new XY(5,15.9)
             };
             coords = (from xy in coords
                       orderby xy.X
